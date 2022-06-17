@@ -19,7 +19,9 @@ include "../controller/config/db.php";
     // User connecté 
     if(isset($_SESSION["user"])){
         if($_SESSION["user"]["ID_rank"] == 2){
-            echo"          
+            //j'ai ajouter la div de class page-wrapper (Brandon)
+            echo" 
+            <div class='page-wrapper'>         
                 <nav class=nav-admin>
                     <ul>
                         <li><a href=index.php?page=dashboard> Dashboard </a><li>
@@ -83,5 +85,7 @@ include "../controller/config/db.php";
         include("../vue/accueil.php"); // Si lien qui n'existe pas
     }
     ?>
+    <!-- fin de la div class page-wrapper -->
+    </div>
 </body>
 </html>

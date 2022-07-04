@@ -24,9 +24,20 @@ if(isset($_POST['nom'], $_POST['email'],$_POST['confirmEmail'], $_POST['mdp'], $
         <input type="text" name="nom" placeholder="Votre nom">
         <input type="email" name="email" placeholder="Votre email">
         <input type="email" name="confirmEmail" placeholder="Confirmer l'email" >
-        <input type="password" name="mdp" placeholder="Mot de passe">
+        <input type="password" name="mdp" id="password" placeholder="Mot de passe"><i class="oeil fa-solid fa-eye" id="oeilMdp"></i>
         <input type="password" name="confirmMdp" placeholder="Confirmer le mot de passe">
         <input type="number" name="tel" placeholder="Numéro de téléphone">
         <button type="submit" class="btn"> S'inscire</button>
     </form>
 </div>
+
+<div id="message">
+    <h3 id="regex">Le mot de passe doit contenir les éléments suivants </h3>
+    <p id="letter" class="invalid">Une lettre minuscule</p>
+    <p id="capital" class="invalid">Une lettre majuscule</p>
+    <p id="number" class="invalid">Un chiffre</p>
+    <p id="length" class="invalid"> 8 caractères minimum</p>
+</div>
+
+<script src="../public/assets/js/inscription.js"></script>
+

@@ -19,33 +19,12 @@ include "../controller/config/db.php";
     // User connecté 
     if(isset($_SESSION["user"])){
         if($_SESSION["user"]["ID_rank"] == 2){
-            //j'ai ajouter la div de class page-wrapper (Brandon)
-            echo" 
-            <div class='page-wrapper'>         
-                <nav class=nav-admin>
-                    <ul>
-                        <li><a href=index.php?page=dashboard> Dashboard </a><li>
-                        <li>
-                            <a href=index.php?page=dashboard>
-                            <i class='fas fa-home'></i>
-                            <span class=nav-item>Dashboard </span>
-                        </a><li>
-                        <li>
-                            <a href=index.php?page=user>
-                            <i class='fas fa-user'></i>
-                            <span class=nav-item> User </span>
-                        </a><li>
-                        <li>
-                            <a href=../vue/deconnection.php class=logout>
-                            <i class='fas fa-sign-out'></i>
-                            <span class=nav-item> Deconnection </span>
-                        </a><li>
-                    </ul>
-                </nav>";
+            header("Location:./backoffice/index.php");
         } else {
         echo"
             <nav class=nav>
                 <ul class=navbar>
+                    <li><a href=index.php?page=accueil>Accueil</a></li>
                     <li><a href=../vue/deconnection.php> Deconnection </a></li>
                 </ul>
             </nav>";
@@ -72,6 +51,9 @@ include "../controller/config/db.php";
             case "dashboard":
                 include("../vue/dashboard.php");
                 break;
+            case "user":
+                include("../vue/user.php");
+                break;
             case "inscription":
                 include('../vue/inscription.php');
                 break;
@@ -87,5 +69,6 @@ include "../controller/config/db.php";
     ?>
     <!-- fin de la div class page-wrapper -->
     </div>
+   
 </body>
 </html>

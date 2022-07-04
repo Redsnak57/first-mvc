@@ -15,11 +15,6 @@
   --h2-font: 2rem;
 }
 
-/* Class que j'ai ajouté (Brandon) */
-.page-wrapper {
-  display: flex;
-}
-
 body {
   background: var(--bg-color);
   color: var(--text-color);
@@ -70,6 +65,7 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 4rem;
+
 }
 
 .formSetup form {
@@ -99,95 +95,65 @@ form input {
 .formSetup form .btn:hover {
   background: #f75c59;
 }
-/* nav admin */
 
-/* .nav-container {
-    display: flex;
-} */
-
-.nav-admin {
-  display: flex;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  left: 0;
-  background: #fff;
-  width: 19%;
-  overflow: hidden;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-
-.nav-admin a {
-  position: relative;
-  color: var(--text-color);
-  font-size: 1.2rem;
-  display: table;
-  width: 280px;
-  padding: 10px;
-}
-
-.nav-admin .fas {
-  position: relative;
-  width: 70px;
-  height: 40px;
-  top: 14px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.nav-item {
-  position: relative;
-  top: 12px;
-  margin-left: 10px;
-}
-
-.nav-admin a:hover {
-  background: var(--main-color);
-}
-
-.nav-admin .logout {
+/* afficher/cacher mdp */ 
+.oeil {
   position: absolute;
-  bottom: 0;
+  top: 46%;
+  right: 36%;
+  cursor: pointer;
 }
 
-/* dashboard */
-.container-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 1rem;
-  padding: 20px 25%;
-}
 
-.box {
-  position: relative;
-  padding: 0.5rem;
+/* regex */ 
+#message {
+  display: none;
+  flex-direction: column;
   background: #fff4f3;
-  text-align: center;
+  width: 400px;
+  margin: auto;
+  border-radius: 6px;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  animation: animermessage 0.3s ease-in-out;
 }
 
-.box h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+@keyframes animermessage {
+  from{
+    transform: translateY(100px);
+  }
 }
 
-.box i {
-  background: var(--main-color);
-  position: absolute;
-  color: white;
-  height: 50px;
-  width: 50px;
-  padding-top: 5px;
-  top: -10px;
-  left: 20px;
-  font-size: 2.5rem;
-  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%),
-    0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
-  /* font-size: 1.6rem;
-    margin-bottom: 1rem; */
+#regex {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.box a {
-  font-size: 1.5rem;
-  color: var(--text-color);
+#message p {
+  margin-left: 7%;
+  padding: 3px 0;
+  font-size: 1rem;
 }
+
+.invalid {
+  color: red;
+}
+.invalid:before {
+  position: relative;
+  left: -7%;
+  content : "✕";
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -7%;
+  content : "✓";
+}
+
